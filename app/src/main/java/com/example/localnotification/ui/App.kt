@@ -1,8 +1,6 @@
 package com.example.localnotification.ui
 
-import android.app.Application
-import android.app.NotificationChannel
-import android.app.NotificationManager
+import android.app.*
 import android.content.Context
 import com.example.localnotification.R
 import com.example.localnotification.ui.utils.MyNotificationService.Companion.CHANNEL_ID

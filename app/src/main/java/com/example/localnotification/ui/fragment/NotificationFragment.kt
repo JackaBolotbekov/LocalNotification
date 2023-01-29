@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.localnotification.databinding.FragmentNotificationBinding
 import com.example.localnotification.ui.utils.MyNotificationService
-import com.example.localnotification.ui.utils.editText
+import com.example.localnotification.ui.utils.MyNotificationService.Companion.text
 
 class NotificationFragment : Fragment() {
 
@@ -34,9 +34,14 @@ class NotificationFragment : Fragment() {
 
     private fun setUpListener() {
         binding.fabNotification.setOnClickListener {
-            val edText = binding.etDescription.text.toString().trim()
-            editText = edText
+            val editText = binding.etDescription.text.toString().trim()
+            binding.etDescription.setText("")
+            text = editText
             service.showNotification()
         }
+    }
+    // Эксперименты
+    companion object {
+        fun newInstance() = NotificationFragment()
     }
 }
